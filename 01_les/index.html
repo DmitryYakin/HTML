@@ -207,76 +207,155 @@
         <p>I'd really like to hear from you!</p>
 
         <form action="https://httpbin.org/get" method="get">
-          <div>
-            <label for="firstName">First Name:</label>
-            <input
-              type="text"
-              name="firstName"
-              id="firstName"
-              placeholder="Dima"
-              autocomplete="on"
-              required
-              autofocus
-            />
-          </div>
-          <div>
-            <label for="lastsName">Last Name:</label>
-            <input
-              type="text"
-              name="lastsName"
-              id="lastsName"
-              placeholder="Yakin"
-              autocomplete="on"
-              required
-            />
-          </div>
-          <div>
-            <label for="password">Password:</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Secret"
-              autocomplete="on"
-              required
-            />
-          </div>
-          <div>
-            <label for="Phone">Phone:</label>
-            <input
-              type="tel"
-              name="Phone"
-              id="Phone"
-              placeholder="+7-911-111-11-11"
-              autocomplete="on"
-              required
-              pattern="^\+7-\d{3}-\d{3}-\d{2}-\d{2}$"
-            />
-          </div>
-          <div>
-            <label for="decade">Favorite Decade:</label>
-            <input
-              type="number"
-              name="decade"
-              id="decade"
-              min="1950"
-              max="2020"
-              step="10"
-              value="2000"
-              required
-            />
-          </div>
-          <div>
+          <fieldset>
+            <legend>Personal Info</legend>
+            <div>
+              <label for="firstName">First Name:</label>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                placeholder="Dima"
+                autocomplete="on"
+                required
+                autofocus
+              />
+            </div>
+            <div>
+              <label for="lastsName">Last Name:</label>
+              <input
+                type="text"
+                name="lastsName"
+                id="lastsName"
+                placeholder="Yakin"
+                autocomplete="on"
+                required
+              />
+            </div>
+            <div>
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Secret"
+                autocomplete="on"
+                required
+              />
+            </div>
+            <div>
+              <label for="Phone">Phone:</label>
+              <input
+                type="tel"
+                name="Phone"
+                id="Phone"
+                placeholder="+7-911-111-11-11"
+                autocomplete="on"
+                required
+                pattern="^\+7-\d{3}-\d{3}-\d{2}-\d{2}$"
+              />
+            </div>
+            <div>
+              <label for="decade">Favorite Decade:</label>
+              <input
+                type="number"
+                name="decade"
+                id="decade"
+                min="1950"
+                max="2020"
+                step="10"
+                value="2000"
+                required
+              />
+            </div>
+            <!-- selected - нужное, но необязательное, свойство, чтобы выбрать какой элемент по умолчанию будет отображаться в начале -->
+            <div>
+              <label for="coffee">Favorite Coffee:</label>
+              <select name="coffee" id="coffee" multiple size="3">
+                <option value="none" selected>Select One</option>
+                <optgroup label="Coffees">
+                  <option value="latte">Latte</option>
+                </optgroup>
+                <optgroup label="Some more Coffees">
+                  <option value="espresso">Espresso</option>
+                  <option value="cappuccino">Cappuccino</option>
+                  <option value="black">Black</option>
+                </optgroup>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <!--  <div>
             <label for="coffee">Favorite Coffee:</label>
-            <select name="coffee" id="coffee">
-              <!-- selected - нужное, но необязательное, свойство, чтобы выбрать какой элемент по умолчанию будет отображаться в начале -->
-              <option value="none" selected>Select One</option>
-              <option value="latte">Latte</option>
-              <option value="cappuccino">Cappuccino</option>
-              <option value="black">Black</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
+            <input type="text" name="coffee" id="coffee" list="coffees">
+              <datalist id="coffees">
+                <option value="Latte"></option>
+                <option value="Espresso"></option>
+                <option value="Cappuccino"></option>
+                <option value="Black"></option>
+                <option value="Other"></option>
+              </datalist>
+          </div>  -->
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>What is your favorite food?</legend>
+            <div>
+              <input type="radio" name="food" id="pizza" value="pizza" />
+              <label for="pizza">Pizza</label>
+            </div>
+            <div>
+              <input type="radio" name="food" id="tacos" value="tacos" />
+              <label for="tacos">Tacos</label>
+            </div>
+            <div>
+              <input type="radio" name="food" id="Chips" value="Chips" />
+              <label for="Chips">Chips</label>
+            </div>
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>Do you have pets?</legend>
+            <div>
+              <input type="checkbox" name="pets" id="dog" value="dog" />
+              <label for="dog">Dog</label>
+            </div>
+            <div>
+              <input type="checkbox" name="pets" id="parrot" value="parrot" />
+              <label for="parrot">Parrot</label>
+            </div>
+            <div>
+              <input type="checkbox" name="pets" id="cat" value="cat" />
+              <label for="cat">Cat</label>
+            </div>
+            <div>
+              <input type="checkbox" name="pets" id="Other" value="Other" />
+              <label for="Other">Other</label>
+            </div>
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>Send me a note</legend>
+            <label for="message">Your Message:</label>
+            <br />
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Type your message here"
+            ></textarea>
+          </fieldset>
+          <br />
+
+          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            formaction="https://httpbit.org/post"
+            formmethod="post"
+          >
+            Post
+          </button>
+          <button type="reset">Reset</button>
         </form>
       </article>
     </main>
